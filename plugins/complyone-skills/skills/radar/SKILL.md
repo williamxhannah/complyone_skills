@@ -11,18 +11,30 @@ This skill runs in 8 steps. Steps 1–4 happen in the same turn, then wait for W
 
 ---
 
-## Step 1 — Collect the week's news
+## Step 1 — Collect source material
+
+The Radar is not a news digest. It covers **industry trends and regulatory shifts** that matter to the businesses ComplyOne serves. A single enforcement action is rarely a topic; the pattern it represents usually is.
 
 Two sources, run in parallel:
 
-**A. Ask 130 (Sales & GTM session)** — message the active 130 session via `mcp__ccd_session_mgmt__send_message`: "Radar run — please send this week's compliance news digest (any regulatory updates, enforcement actions, consultations, or deadlines you have noted since the last Radar)."
+**A. Ask 130 (Sales & GTM session)** — message via `mcp__ccd_session_mgmt__send_message`: "Radar run — what compliance trends, regulatory shifts, or enforcement patterns have you noted this week that are relevant to our prospects?"
 
-**B. Web search** — run all three in parallel:
-- `site:eur-lex.europa.eu OR site:esma.europa.eu OR site:eba.europa.eu compliance regulation 2026` (last 7 days)
-- `FCA DORA NIS2 GDPR enforcement announcement` (last 7 days)
-- `EU compliance SME regulation news` (last 7 days)
+**B. Regulator and industry sources** — fetch the news/publications pages for each. Read the page, not just the index:
 
-**A headline is not a news item.** Every candidate must have a primary-source URL. Nothing passes to Step 1b on a headline alone.
+| Source | URL | Covers |
+|--------|-----|--------|
+| BaFin (Germany) | https://www.bafin.de/EN/Presse/Pressemitteilungen/pressemitteilungen_node.html | DE financial regulation |
+| FINMA (Switzerland) | https://www.finma.ch/en/news/all-news/ | CH financial regulation |
+| FMA (Austria) | https://www.fma.gv.at/en/press/press-releases/ | AT financial regulation |
+| FCA (UK) | https://www.fca.org.uk/news | UK financial regulation |
+| ESMA | https://www.esma.europa.eu/press-news/esma-news | EU markets |
+| EBA | https://www.eba.europa.eu/news | EU banking |
+| EDPB | https://www.edpb.europa.eu/news/news_en | EU data protection |
+| EUR-Lex (recent acts) | https://eur-lex.europa.eu/oj/direct-access.html | EU legislation |
+
+Collect items. For each one that looks relevant: note the headline and URL only at this stage — full reads happen in Step 1b.
+
+**A headline is not a news item.** Nothing passes to Step 1b as a topic without a primary-source URL you have fetched.
 
 ---
 
@@ -76,30 +88,31 @@ Fetch `https://complyone.io/sales` and read the product order on the page — le
 
 ---
 
-## Step 3 — Additional research
+## Step 3 — Identify the trend each item illustrates
 
-For each story that survived Step 1: fetch the primary source URL, read the actual text, and note:
-- What changed (the new rule, the deadline, the enforcement action)
-- Who it applies to (which company types / sectors / jurisdictions)
-- What a business must actually do as a result
-- Whether any top-5 product from Step 2 is directly relevant
+For each item that passed Step 1b: ask what broader pattern it is evidence of. A single enforcement action is evidence of a trend; the trend is the topic. Write one sentence per item: "[This item] shows that [trend]."
 
-Discard any story where the primary source does not support the item (no fallback data, no reconstructed facts).
+Then group items that point to the same trend — a newsletter can weave two or three related items into one coherent argument.
+
+Also consider: what is happening in the market, not just in regulators? Are DACH firms asking about a specific topic? Are UK firms rushing to meet a deadline? Use product priority (Step 2) to weight which trends are most relevant to ComplyOne's current offering.
 
 ---
 
 ## Step 4 — Propose 3 topics
 
-Present exactly 3 topic options. For each one:
+Present exactly 3 topic options. Each must be a trend or pattern — not an event summary.
 
 ```
-TOPIC [n]: [One sentence title]
-Hook: [The concrete situation that makes this worth reading this week]
-Audience: [Who this speaks to most directly]
-Product tie: [Which module is relevant, or "none — no product claim"]
-Newsletter angle: [2–3 sentences on what the newsletter would cover]
-LinkedIn angle: [1 sentence on the post hook]
+TOPIC [n]: [The trend, in one sentence — not the news item]
+Trend: [What is shifting: regulatory, market, or enforcement pattern]
+Evidence: [The specific sourced item(s) that illustrate it, with URLs]
+Audience: [Who this matters to — be specific: DE/CH/AT/UK SMEs, fintechs, etc.]
+Product tie: [Which module, or "none — no product claim"]
+Newsletter angle: [The big-picture question the newsletter answers]
+LinkedIn angle: [The one insight a reader takes away]
 ```
+
+Topics must be trends. "The FCA fined someone" is not a topic. "Regulators are targeting the promoter, not just the product" is a topic.
 
 Then: **"Which topic? 1, 2 or 3."**
 
