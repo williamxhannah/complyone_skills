@@ -26,6 +26,45 @@ Collect the results. Only carry items that have a primary-source URL you have fe
 
 ---
 
+## Step 1b — Recency and source validation (MANDATORY before Step 2)
+
+Run this for every item that survived Step 1. No item proceeds to topic proposal without passing both gates.
+
+### Gate A — Date verification
+
+For each item:
+1. Fetch the primary-source URL.
+2. Find the publication date **on that page** — the date stamp in the page header, article metadata, or HTML `<time>` element. Do not use the date a search engine cached or a date you recall.
+3. The item is accepted only if the date is **within 14 days of today**. Anything older is dropped, regardless of how recent it looked in search results.
+4. Record: `[headline] | [date found on page] | [URL]`
+
+If the date cannot be found on the page, the item is dropped. "I could not find a date" is a drop, not a pass.
+
+### Gate B — Independent validation check
+
+After Gate A, re-verify each accepted item using a **second independent method**:
+- Either fetch a second URL that references the same item (e.g. the regulator's main news index, a secondary press release, the EUR-Lex publication notice), OR
+- Search for the item's headline and confirm the date reported by another source matches.
+
+This exists because a page can carry a stale "last updated" date far older than the original publication, or a search snippet can show an old article as if new. Gate B catches that.
+
+If Gate B finds a date mismatch (e.g. Gate A returned 2026 but Gate B finds the item is from 2024), the item is dropped and flagged: `⚠️ DATE CONFLICT — dropped: [headline]`.
+
+### Output of Step 1b
+
+Before moving to Step 2, show a compact validation table:
+
+```
+RECENCY CHECK — [today's date]
+| Item | Date on page | Gate B confirms | Status |
+|------|-------------|-----------------|--------|
+| ...  | DD MMM YYYY | yes / no / mismatch | ✅ / ❌ |
+```
+
+Items marked ❌ do not appear in topic proposals. If fewer than 3 items pass, say so and ask whether to widen the search window before continuing.
+
+---
+
 ## Step 2 — Review product priority
 
 Fetch `https://complyone.io/sales` and read the product order on the page — left to right, top to bottom is the priority order. Note the top 5 modules. These are the products most likely to have a relevant hook for this week's Radar.
