@@ -82,9 +82,9 @@ Run this for every item from Step 1 before anything else. No item reaches topic 
 Fetch each primary-source URL. **Read the full article.** From the text, extract:
 
 1. **Publication date** — from the page header or metadata. Not from a search snippet. If not found, drop the item.
-2. **What it actually says** — specific outcomes, amounts, deadlines, findings. No inference from the headline. "Sentenced" means you read the sentence. "Fined" means you read the amount and the basis.
-3. **Who it applies to** — from the article, not assumed.
-4. **The stat or finding** — exact number, with the sample size or methodology if given.
+2. **Exact quote from the page** — copy the sentence(s) verbatim from the article that support each claim. Not a paraphrase, not a summary, not an inference from the headline. If you cannot find a sentence in the article that supports the claim, the claim cannot be made. "Sentenced" means you paste the sentence. "Fined" means you paste the sentence with the amount and the basis.
+3. **Who it applies to** — from the article text, not assumed. Quote the population as the article states it (e.g. "respondents" not "firms").
+4. **The stat or finding** — exact number, with the exact population and framing the article uses. Never restate a stat in stronger or simpler terms than the source used.
 
 Recency rule: regulatory news must be **within 14 days**. Industry reports and stats may be up to **90 days old** if the finding is durable.
 
@@ -92,18 +92,32 @@ Recency rule: regulatory news must be **within 14 days**. Industry reports and s
 
 For each item, confirm the date via a second independent source (the regulator's index page, a second press release, the report's own publication page). If the dates conflict, drop the item and flag it: `⚠️ DATE CONFLICT — dropped`.
 
+### Gate C — Every sentence in the draft must have a quote
+
+Before the post or newsletter is shown to William, run this check on every factual sentence in the draft:
+
+1. Find the verbatim quote from the source that proves this sentence.
+2. If no quote exists, the sentence is deleted — not softened, not hedged, deleted.
+3. Never write a claim because it seems reasonable or likely. Only write what a quote directly supports.
+
+Common failures this gate exists to catch:
+- "first" / "new" / "landmark" — superlatives with no quote to back them
+- "firms must" / "companies are required" — obligation language when the source says voluntary
+- "new requirements" — characterising a consultation or guidance as binding rules
+- Strengthening a stat's framing ("raises risk" when the source says "moderate or high impact")
+
 ### Output of Step 1b
 
 Show this table before moving on:
 
 ```
 RESEARCH VALIDATED — [today's date]
-| Item | Source | Date on page | Gate B | What it actually says | Status |
-|------|--------|-------------|--------|----------------------|--------|
-| ...  | ...    | DD MMM YYYY | ✅/⚠️  | 1-line from the text | ✅/❌  |
+| Item | Source | Date on page | Gate B | Verbatim quote | Status |
+|------|--------|-------------|--------|----------------|--------|
+| ...  | ...    | DD MMM YYYY | ✅/⚠️  | "exact words"  | ✅/❌  |
 ```
 
-The "What it actually says" column proves Gate A ran on the full text. A vague or headline-parroting entry has not passed. If fewer than 3 items pass, ask before continuing.
+The "Verbatim quote" column must contain the actual sentence(s) from the source, in quotation marks. A paraphrase has not passed. Gate C then runs on the draft: every sentence traced to this column, every sentence without a trace deleted. If fewer than 3 items pass, ask before continuing.
 
 ---
 
