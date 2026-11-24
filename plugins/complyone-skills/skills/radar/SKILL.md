@@ -198,15 +198,45 @@ Save to: `sales/linkedin posts/radar_newsletter/edition_NN_<slug>.txt`
 
 Length: 150–250 words. Save to: `sales/linkedin posts/YYYY-MM-DD_radar_edition_NN.txt`
 
-**Image** — 1200×628 PNG (same pipeline as UK crypto series):
-- Background: navy (#0A1628) → teal (#00B5A3) gradient, top-left to bottom-right
-- Top-left: "ComplyOne Radar" in teal, Inter 600, 18px
-- Edition number + date: white, Inter 400, 14px
-- Headline: white, Inter 800, 48–56px, max 2 lines, centred
-- Bottom-right: "ComplyOne.io", white, Inter 600, 16px
-- Save: `sales/linkedin posts/radar_newsletter/img_radar_edition_NN.png`
+**Image** — 1200×628 PNG:
+
+LinkedIn images are small at thumbnail size. **Only the single biggest element is readable. Everything else disappears.** Design for this — not for a full-size preview.
+
+Rules:
+- **Hero only.** One or two lines of massive text that dominate the frame. Nothing else should be visible or compete at thumbnail size. No kicker, no edition number, no subhead, no webinar CTA box, no decoration.
+- **Bold, high-contrast palette.** Navy + teal is overused — avoid it. Use a palette that stops the scroll: near-black background, electric accent (e.g. near-black `#0D0D0D` + white + electric orange `#FF4D00`). Headline text in white; a key phrase or word in the accent colour.
+- **ComplyOne.io always present.** Small, bottom of the image (bottom-left or bottom-right), low-opacity white. It won't be readable at thumbnail size — that is correct. It still appears in the full-size view.
+- **If a webinar is being promoted:** the webinar date and URL go in the post text, not on the image.
+
+**Generate as PNG** — not HTML, not SVG. LinkedIn does not accept SVG. Use PIL with system fonts.
+
+```python
+from PIL import Image, ImageDraw, ImageFont
+
+font_path = "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
+img = Image.new("RGB", (1200, 628), "#0D0D0D")
+draw = ImageDraw.Draw(img)
+
+hero_font = ImageFont.truetype(font_path, 108)
+brand_font = ImageFont.truetype(font_path, 22)
+
+# Line 1 — white
+draw.text((72, 260), "Line one of the hero.", font=hero_font, fill="#FFFFFF")
+# Line 2 — accent colour
+draw.text((72, 390), "Line two of the hero.", font=hero_font, fill="#FF4D00")
+# Brand
+draw.text((72, 580), "ComplyOne.io", font=brand_font, fill=(255, 255, 255, 90))
+
+img.save("sales/linkedin posts/radar_newsletter/img_radar_edition_NN.png")
+```
+
+Adjust font sizes so both lines fit within the frame width. If a line wraps, reduce to 90px.
+
+Save: `sales/linkedin posts/radar_newsletter/img_radar_edition_NN.png`
 
 Show the PNG before Step 7.
+
+**Post display format** — show the post as plain text with a blank line between each paragraph, between a `---` divider above and below. Do NOT put the post in a code block — it makes the text harder to copy. The webinar link goes in the post as a plain URL on its own line so the reader can copy it.
 
 ---
 
