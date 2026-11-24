@@ -27,6 +27,7 @@ The repo is private, so the machine needs GitHub access first (SSH key or `gh au
 | `/dashboard` | Create or update a task dashboard: Gantt or progress at the top, click a task for its detail |
 | `/inbox` | Read-only email brief: production issues, customers, partners, VCs, money/legal, needs a reply |
 | `/progress` | Gather the last weeks of progress (git across all repos + decision files) into a progress dashboard; creates or updates it |
+| `/meeting-notes` | Find Google Meet transcripts / Gemini notes via Gmail and summarise each meeting |
 
 ## Add a skill
 
