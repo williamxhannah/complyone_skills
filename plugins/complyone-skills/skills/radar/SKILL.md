@@ -22,7 +22,7 @@ Two sources, run in parallel:
 - `FCA DORA NIS2 GDPR enforcement announcement` (last 7 days)
 - `EU compliance SME regulation news` (last 7 days)
 
-Collect the results. Only carry items that have a primary-source URL you have fetched. No invented or recalled news.
+**A headline is not a news item.** Every candidate must have a primary-source URL. Nothing passes to Step 1b on a headline alone.
 
 ---
 
@@ -30,15 +30,18 @@ Collect the results. Only carry items that have a primary-source URL you have fe
 
 Run this for every item that survived Step 1. No item proceeds to topic proposal without passing both gates.
 
-### Gate A — Date verification
+### Gate A — Full read + date verification
 
-For each item:
-1. Fetch the primary-source URL.
-2. Find the publication date **on that page** — the date stamp in the page header, article metadata, or HTML `<time>` element. Do not use the date a search engine cached or a date you recall.
-3. The item is accepted only if the date is **within 14 days of today**. Anything older is dropped, regardless of how recent it looked in search results.
-4. Record: `[headline] | [date found on page] | [URL]`
+For each item, fetch the primary-source URL and **read the full article text**. A headline is never enough — the substance must be read before the item is carried forward.
 
-If the date cannot be found on the page, the item is dropped. "I could not find a date" is a drop, not a pass.
+From the full text, extract:
+1. **Publication date** — from the page header, article metadata, or HTML `<time>` element. Not from a search snippet or memory. If no date is found on the page, drop the item.
+2. **What actually happened** — in your own words, from the article: the specific decision, rule, fine amount, deadline, or change. No inference from the headline. If the headline says "sentenced" you read the sentencing outcome; if it says "fined" you read the fine amount and basis.
+3. **Who it applies to** — from the article text, not from the topic description.
+
+The item is accepted only if the date is **within 14 days of today**. Anything older is dropped.
+
+Record: `[headline] | [date on page] | [what actually happened, from the text] | [URL]`
 
 ### Gate B — Independent validation check
 
@@ -52,14 +55,16 @@ If Gate B finds a date mismatch (e.g. Gate A returned 2026 but Gate B finds the 
 
 ### Output of Step 1b
 
-Before moving to Step 2, show a compact validation table:
+Before moving to Step 2, show a validation table with substance:
 
 ```
 RECENCY CHECK — [today's date]
-| Item | Date on page | Gate B confirms | Status |
-|------|-------------|-----------------|--------|
-| ...  | DD MMM YYYY | yes / no / mismatch | ✅ / ❌ |
+| Item | Date on page | Gate B confirms | What it actually says | Status |
+|------|-------------|-----------------|----------------------|--------|
+| ...  | DD MMM YYYY | yes / mismatch  | 1-line from the text | ✅ / ❌ |
 ```
+
+The "What it actually says" column is the control — it proves Gate A was run on the full text, not on a headline. A row with a vague or headline-parroting entry in that column has not passed Gate A.
 
 Items marked ❌ do not appear in topic proposals. If fewer than 3 items pass, say so and ask whether to widen the search window before continuing.
 
