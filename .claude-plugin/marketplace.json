@@ -1,0 +1,16 @@
+{
+  "name": "complyone-skills",
+  "owner": {
+    "name": "ComplyOne.io"
+  },
+  "metadata": {
+    "description": "ComplyOne.io house skills: content, communication and operating procedures, usable from any session."
+  },
+  "plugins": [
+    {
+      "name": "complyone-skills",
+      "source": "./plugins/complyone-skills",
+      "description": "ComplyOne.io house skills (LinkedIn posts first; more to follow)."
+    }
+  ]
+}
