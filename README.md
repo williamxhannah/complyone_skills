@@ -7,7 +7,7 @@ ComplyOne.io house skills for Claude Code, packaged as a plugin so every session
 In any Claude Code session:
 
 ```
-/plugin marketplace add williamxhannah/complyone-skills
+/plugin marketplace add williamxhannah/complyone_skills
 /plugin install complyone-skills@complyone-skills
 ```
 
