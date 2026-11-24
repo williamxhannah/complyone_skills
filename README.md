@@ -28,6 +28,7 @@ The repo is private, so the machine needs GitHub access first (SSH key or `gh au
 | `/inbox` | Read-only email brief: production issues, customers, partners, VCs, money/legal, needs a reply |
 | `/progress` | Gather the last weeks of progress (git across all repos + decision files) into a progress dashboard; creates or updates it |
 | `/meeting-notes` | Find Google Meet transcripts / Gemini notes via Gmail and summarise each meeting |
+| `/my-voice` | Write emails in William's own short, plain voice; bans AI-style phrases |
 
 ## Add a skill
 
