@@ -17,7 +17,7 @@ description: Read the founder's Gmail and give a short brief of what matters - c
 Use the Gmail connector (load its tools first if they are deferred: search with `search_threads`, read with `get_thread`).
 
 1. `search_threads` with `in:inbox -category:promotions -category:social <window>`, `view: THREAD_VIEW_SUMMARY`, `pageSize: 50`. Page until done.
-2. Separately, never filtered out by category: `<window> (subject:(error OR failed OR failure OR down OR outage OR alert OR incident OR "payment failed" OR regression) OR from:(noreply OR alerts OR monitor))`.
+2. Separately, never filtered out by category: `<window> (subject:(error OR failed OR failure OR down OR outage OR alert OR incident OR "payment failed" OR regression) OR from:(noreply OR alerts OR monitor)) -from:meetings-noreply@google.com -from:calendar-notification@google.com`. Meeting-record emails (transcripts) go under the category of who the meeting was with, with the link.
 3. Drop: newsletters, marketing, receipts with no action, calendar auto-notifications, cold vendor pitches. Count what you dropped.
 4. Open (`get_thread`, plain text) every thread you keep in a category below. Classify from the actual message, not the snippet.
 
