@@ -24,6 +24,7 @@ The repo is private, so the machine needs GitHub access first (SSH key or `gh au
 | Skill | Use |
 |---|---|
 | `/linkedin-post` | Draft, edit or review a ComplyOne.io LinkedIn post |
+| `/dashboard` | Create or update a task dashboard: Gantt or progress at the top, click a task for its detail |
 
 ## Add a skill
 
